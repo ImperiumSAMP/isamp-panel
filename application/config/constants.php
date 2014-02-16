@@ -36,6 +36,17 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+/*
+|--------------------------------------------------------------------------
+| Isamp Access Level Constants
+|--------------------------------------------------------------------------
+*/
+
+define('ACCLEVEL_USER',0);
+define('ACCLEVEL_MODERATOR',1);
+define('ACCLEVEL_ADMIN',10);
+define('ACCLEVEL_SUPERADMIN',20);
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

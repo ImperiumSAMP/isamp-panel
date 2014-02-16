@@ -1,6 +1,8 @@
 <?php
 
-class Ban_model extends CI_Model {
+class Ban_model extends MY_Model {
+
+	public $primary_key = 'pID';
 
     var $pID   = 0;
     var $pName = '';
@@ -13,19 +15,11 @@ class Ban_model extends CI_Model {
 	var $banActive=0;
 	var $banPanel='';
 
-    function __construct()
-    {
-        // Call the Model constructor
-        parent::__construct();
-    }
     
     function get_bans()
     {
-        $this->db->order_by('banDate','desc');
-		$this->db->where('banActive',1);
-		$query = $this->db->get('bans');
-		
-        return $query->result();
+		$this->order_by('banDate','desc');
+		return $this->get_all();
     }
 
 	function lift_ban($playerid){
@@ -35,16 +29,5 @@ class Ban_model extends CI_Model {
 		
 		return true;
 	}
-	
-    function insert_ban()
-    {
-        $this->db->insert('bans', $this);
-    }
-
-    function update_ban()
-    {
-        $this->db->update('bans', $this, array('pID' => $this->pID));
-    }
-
 }
 ?>

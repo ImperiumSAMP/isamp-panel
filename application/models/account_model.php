@@ -1,6 +1,6 @@
 <?php
 
-class Account_model extends CI_Model {
+class Account_model extends MY_Model {
 
     var $Id	= 0;
 	var $Name	= '';
@@ -64,10 +64,8 @@ class Account_model extends CI_Model {
 	var $pCocaine	= 0;
 	var $pAdictionAbstinence	= 0;
 
-    function __construct()
-    {
-        // Call the Model constructor
-        parent::__construct();
-    }
-
+	function get_by_login($username,$password){
+		return $this->get_by(array('Name' => $username, 'Password' => md5($password)));
+	}
+	
 }
