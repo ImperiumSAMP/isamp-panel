@@ -23,6 +23,12 @@ class Isamp_auth {
 		return true;
 	}
 	
+	public function match_level($level){
+		if(!$this->check_login()) return false;
+		if($this->CI->session->userdata('AdminLevel')==$level) return true;
+		return false;
+	}
+	
 	public function access_denied(){
 		$this->CI->session->set_flashdata('redirect_url',current_url());
 		redirect('login/access_denied');

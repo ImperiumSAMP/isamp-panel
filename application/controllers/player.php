@@ -14,14 +14,10 @@ class Player extends CI_Controller {
 			return "<div id='false'></div>";
 	}
 	
-	private function actions($ban){
+	private function actions($player){
 		$acts="";
-		if($ban->banActive==1)
-			$acts.=anchor_popup("bans/lift/".$ban->pID,"Levantar",array());
-		else
-			$acts.="Reactivar";
-		
 		$acts.=" Detalles";
+		$acts.=" Ver en mapa";
 		return $acts;
 	}
 
@@ -32,12 +28,12 @@ class Player extends CI_Controller {
 		$this->load->library('table');
 		
 		$this->account->order_by('name');
-		$bans=$this->account->get_all();
+		$accounts=$this->account->get_all();
 		
-		$this->table->set_heading('Nombre', 'IP', 'Fecha inicio', 'Fecha fin', 'Raz&oacute;n', 'Admin', 'Activo?','Panel?','Acciones');
-		foreach($bans as $ban)
+		$this->table->set_heading('Nombre', 'IP', 'Nivel', 'Nivel admin', 'Edad', 'Experiencia', 'Dinero en mano','Dinero en banco','Skin','Acciones');
+		foreach($accounts as $acc)
 		{
-			$this->table->add_row($this->player($ban->pID,$ban->pName),$ban->pIP,$ban->banDate,$ban->banEnd,$ban->banReason,$this->player($ban->banIssuerID,$ban->banIssuerName),$this->showbool($ban->banActive),$ban->banPanel,$this->actions($ban));
+			$this->table->add_row($this->player($acc->Id,$acc->Name),$acc->Level,$acc->AdminLevel,$acc->Age,$acc->Exp,$acc->CashMoney,$acc->BankMoney,$this->Skin,$this->actions($acc));
 		}
 		echo $this->table->generate();
 	}
@@ -46,10 +42,17 @@ class Player extends CI_Controller {
 		if($playerid==$this->session->userdata('Id'))
 			require_level(ACCLEVEL_USER);
 		else
-			require_level(ACCLEVEL_ADMIN);
+			require_level(ACCLEVEL_MODERATOR);
 		
 		$this->load->model('Account_model','account');
-		print_r($this->account->get($playerid));
+		$this->load->model('Job_model','job');
+		$this->load->model('Faction_model','faction');
+		
+		$account=$this->account->get($playerid);
+		$job=$this->job->get($account->Job);
+		$faction=$this->faction->get($account->Faction);
+		
+		$this->load->view('players/details.php',array('Player' => $account, 'Job' =>  $job, 'Faction' => $faction));
 	}
 	
 }
