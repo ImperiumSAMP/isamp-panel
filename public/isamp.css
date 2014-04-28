@@ -1,0 +1,154 @@
+ol, ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    height: 46px;
+    position: fixed;
+	top: 0;
+	left: 0;
+    width: 100%;
+	background: none repeat scroll 0 0 #FFFFFF;	
+	padding-left: 50px;
+}
+
+div.main-content{
+	margin-top: 80px;
+	margin-left: 45px;
+}
+
+@font-face {
+	font-family: pricedown;
+	src: url(/fonts/pricedown.ttf);
+}
+
+@font-face {
+	font-family: diploma;
+	src: url(/fonts/diploma.ttf);
+}
+
+div.validation-errors p  {
+	background-color: #FDDDDD;
+    border-radius: 0.3em;
+    color: #EE1010;
+    padding-left: 8px;
+    width: 320px;
+}
+
+div.login-form{
+    background-color: #EEEEFF;
+    border-radius: 1em;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-top: 5px;
+    width: 360px;
+}
+
+h2{
+	font-family: pricedown;	
+	font-size: 2em;
+	color: #ffffff; 
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+h5{
+	font-family: diploma;	
+	font-size: 1.2em;
+	color: #ffffff; 
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	margin-bottom: 5px;
+	margin-top: 1px;
+}
+
+div.login-field{
+	margin-bottom: 10px;
+}
+
+#login-field span{
+	display:block;
+	float: left;
+}
+
+.navigation-list {
+	float: left;
+	padding-top: 10px;
+}
+
+.navigation-list li {
+	display: inline;
+}
+
+.navigation-list > li > a, .nav > li > button {
+    color: #555566;
+    font-size: 20px;
+    font-weight: 500;
+    height: 46px;
+    line-height: 1;
+    padding: 0 14px 0 4px;
+}
+
+.navigation-list a {
+	text-decoration: none;
+}
+
+.navigation-list a:hover {
+	text-decoration: underline;
+	color: #009999;
+}
+
+#session-info {
+	float:right;
+	width:200px;
+}
+#topbar-content {
+	width: 75%;
+}
+
+.login-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+	background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
+	background-color:#fe1a00;
+	-webkit-border-top-left-radius:15px;
+	-moz-border-radius-topleft:15px;
+	border-top-left-radius:15px;
+	-webkit-border-top-right-radius:15px;
+	-moz-border-radius-topright:15px;
+	border-top-right-radius:15px;
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	border-bottom-right-radius:15px;
+	-webkit-border-bottom-left-radius:15px;
+	-moz-border-radius-bottomleft:15px;
+	border-bottom-left-radius:15px;
+	text-indent:0;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:36px;
+	line-height:36px;
+	width:122px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #b23e35;
+}
+.login-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
+	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
+	background-color:#ce0100;
+}.login-button:active {
+	position:relative;
+	top:1px;
+}
+/* This button was generated using CSSButtonGenerator.com */

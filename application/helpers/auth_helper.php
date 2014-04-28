@@ -14,6 +14,13 @@ function print_if_level_arr($arr){
 	}
 }
 
+function print_login_info(){
+	$CI =& get_instance();
+	if($CI->isamp_auth->check_login()){
+		$CI->load->view("login_info",$CI->session->all_userdata());
+	}
+}
+
 function require_level($level){
 	$CI =& get_instance();	
 	return $CI->isamp_auth->require_level($level);

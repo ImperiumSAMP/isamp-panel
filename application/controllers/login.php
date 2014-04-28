@@ -15,7 +15,9 @@ class Login extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$this->session->set_flashdata('redirect_url',$this->session->flashdata('redirect_url'));
+			$this->load->view("header.php",array('title'=>'Malos Aires Roleplay - Iniciar sesi&oacute;n'));
 			$this->load->view("login_form.php");
+			$this->load->view("footer.php");
 		}
 		else
 		{
@@ -30,7 +32,10 @@ class Login extends CI_Controller {
 					redirect('/index');
 			} else {
 				$this->session->set_flashdata( 'message', 'Login inv&aacute;lido.' );
-                $this->load->view("login_form.php",array('redirect_url' => $redirect_url ));
+                $this->session->set_flashdata('redirect_url',$this->session->flashdata('redirect_url'));
+				$this->load->view("header.php",array('title'=>'Malos Aires Roleplay - Iniciar sesi&oacute;n'));
+				$this->load->view("login_form.php");
+				$this->load->view("footer.php");
 			}
 		}
 		

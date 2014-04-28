@@ -46,4 +46,5 @@ class Isamp_auth {
 			return false;
 		return true;
 	}
+	
 }

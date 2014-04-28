@@ -1,7 +1,6 @@
 <?php
 class Bans extends CI_Controller {
 
-
 	private function player($id,$name){
 		$this->load->helper('url');
 		return anchor_popup("player/detail_popup/$id",$name,array());
@@ -38,24 +37,46 @@ class Bans extends CI_Controller {
 	}
 
 	public function index(){
+		$this->search();
+	}
+	
+	public function search($criteria){
 		require_level(ACCLEVEL_MODERATOR);
 		$this->load->model('Ban_model');
 		$this->load->library('table');
 		
-		$bans=$this->Ban_model->get_bans();
+		//$bans=$this->Ban_model->get_bans();
+		$this->Ban_model->order_by('banDate','desc');
+		$bans=$this->Ban_model->limit(50)->get_many_by("pName like '%$criteria%'");
 		
-		$tmpl = array ( 'table_open'  => '<table id="gradient-style">' );
-		$this->table->set_template($tmpl); 
+		echo "<br/><br/><br/><br/><br/><br/><br/";
+		print_r($bans);
 		
-		$this->table->set_heading('Nombre', 'IP', 'Fecha inicio', 'Fecha fin', 'Raz&oacute;n', 'Admin', 'Activo?','Panel?','Acciones');
-		foreach($bans as $ban)
-		{
-			$this->table->add_row($this->player($ban->pID,$ban->pName),$ban->pIP,$ban->banDate,$ban->banEnd,$ban->banReason,$this->player($ban->banIssuerID,$ban->banIssuerName),$this->showbool($ban->banActive),$ban->banPanel,$this->actions($ban));
-		}
-		
-		$data = array( 'table' => $this->table->generate() );
+		if($bans!=array()){			
+			
+			$tmpl = array ( 'table_open'  => '<table id="gradient-style">' );
+			$this->table->set_template($tmpl); 
+			
+			$this->table->set_heading('Nombre', 'IP', 'Fecha inicio', 'Fecha fin', 'Raz&oacute;n', 'Admin', 'Activo?','Panel?','Acciones');
 
+			if(count($bans)==1){
+				//$ban=$bans;
+				$this->table->add_row($this->player($bans->pID,$bans->pName));//,$ban->pIP,$ban->banDate,$ban->banEnd,$ban->banReason,$this->player($ban->banIssuerID,$ban->banIssuerName),$this->showbool($ban->banActive),$ban->banPanel,$this->actions($ban));
+			} else {
+				foreach($bans as $ban)
+				{
+					$this->table->add_row($this->player($ban->pID,$ban->pName),$ban->pIP,$ban->banDate,$ban->banEnd,$ban->banReason,$this->player($ban->banIssuerID,$ban->banIssuerName),$this->showbool($ban->banActive),$ban->banPanel,$this->actions($ban));
+				}
+			}
+		
+			$table=$this->table->generate();
+		} else $table = "No se encontraron resultados";
+		$title="Lista de Bans";
+		$this->load->view("header.php",array('title'=>$title));
+		$this->load->view("topbar.php");
+		$data=array('table'=>$table,'module'=>'bans','title'=>$title);
 		$this->load->view("bans/list.php",$data);
+		$this->load->view("footer.php");
 	}
 	
 	public function new_ban_popup(){

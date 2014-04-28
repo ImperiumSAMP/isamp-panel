@@ -68,4 +68,8 @@ class Account_model extends MY_Model {
 		return $this->get_by(array('Name' => $username, 'Password' => md5($password)));
 	}
 	
+	function get_by_name($name){
+		return $this->get_by(array('Name' => $name));
+	}
+	
 }
