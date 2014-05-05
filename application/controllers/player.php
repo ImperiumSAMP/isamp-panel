@@ -1,5 +1,23 @@
 <?php
-class Player extends CI_Controller {
+class Player extends MY_Controller {
+
+	protected $_model="Account_model";
+	protected $_list_title="Lista de usuarios";
+	protected $_order="name";
+	protected $_order_direction="asc";
+	
+	public function _generate_where($criteria){
+		return "name like '%$criteria%'";
+	}
+	
+	public function _set_table_heading($table){
+		$table->set_heading('Nombre', 'IP', 'Nivel', 'Nivel admin', 'Edad', 'Experiencia', 'Dinero en mano','Dinero en banco','Skin','Acciones');
+		return $table;
+	}
+	
+	public function _add_row_to_table($table,$acc){
+		$table->add_row($this->player_detail_link($acc->Id,$acc->Name),anchor("http://who.is/whois-ip/ip-address/".$acc->Ip,$acc->Ip),$acc->Level,$acc->AdminLevel,$acc->Age,$acc->Exp,$acc->CashMoney,$acc->BankMoney,$acc->Skin,$this->actions($acc));
+	}
 
 
 	/*private function player($id,$name){
@@ -26,7 +44,7 @@ class Player extends CI_Controller {
 		return $acts;
 	}
 
-	public function index(){
+	/*public function index(){
 		$this->search();
 	}
 	
@@ -66,7 +84,7 @@ class Player extends CI_Controller {
 			$this->load->view("bans/list.php",$data);
 			$this->load->view("footer.php");
 
-	}
+	}*/
 	
 	public function detail_popup($playerid){
 		if($playerid==$this->session->userdata('Id'))

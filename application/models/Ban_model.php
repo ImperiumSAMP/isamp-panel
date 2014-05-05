@@ -29,5 +29,20 @@ class Ban_model extends MY_Model {
 		
 		return true;
 	}
+	
+	function ban($player,$issuer,$reason,$dateend){
+		$this->pID=$player->Id;
+		$this->pName=$player->Name;
+		$this->pIP=$player->Ip;
+		$this->banDate = date('Y-m-d H:i:s');
+		$this->banEnd = $dateend;
+		$this->banReason = $reason;
+		$this->banIssuerId = $issuer->Id;
+		$this->banIssuerName = $issuer->Name;
+		$this->banActive=1;
+		$this->banPanel=true;
+		
+		$this->db->save($this);
+	}
 }
 ?>
