@@ -4,11 +4,16 @@ ol, ul {
     padding: 0;
 }
 
+.imphead {
+	position: fixed;
+	top:0;
+}
+
 .topbar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     height: 46px;
     position: fixed;
-	top: 0;
+	top: 28px;
 	left: 0;
     width: 100%;
 	background: none repeat scroll 0 0 #FFFFFF;	
@@ -16,7 +21,7 @@ ol, ul {
 }
 
 div.main-content{
-	margin-top: 80px;
+	margin-top: 95px;
 	margin-left: 45px;
 }
 
@@ -39,6 +44,8 @@ div.validation-errors p  {
 }
 
 div.login-form{
+	margin-top: 45px;
+	margin-left: 25px;
     background-color: #EEEEFF;
     border-radius: 1em;
     padding-bottom: 10px;
