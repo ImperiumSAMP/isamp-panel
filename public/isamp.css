@@ -151,4 +151,64 @@ div.login-field{
 	position:relative;
 	top:1px;
 }
+
+
+.register-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #9ce293;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #9ce293;
+	box-shadow:inset 0px 1px 0px 0px #9ce293;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #001afe), color-stop(1, #00ce01) );
+	background:-moz-linear-gradient( center top, #00ee1a 5%, #00ce01 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fe1a', endColorstr='#00ce01');
+	background-color:#00fe1a;
+	-webkit-border-top-left-radius:15px;
+	-moz-border-radius-topleft:15px;
+	border-top-left-radius:15px;
+	-webkit-border-top-right-radius:15px;
+	-moz-border-radius-topright:15px;
+	border-top-right-radius:15px;
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	border-bottom-right-radius:15px;
+	-webkit-border-bottom-left-radius:15px;
+	-moz-border-radius-bottomleft:15px;
+	border-bottom-left-radius:15px;
+	text-indent:0;
+	border:1px solid #35d826;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:36px;
+	line-height:36px;
+	width:122px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #3eb235;
+	margin-left: 15px;
+}
+.register-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00ce01), color-stop(1, #00ee1a) );
+	background:-moz-linear-gradient( center top, #00ce01 5%, #00ee1a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ce01', endColorstr='#00ee1a');
+	background-color:#00ce01;
+}.register-button:active {
+	position:relative;
+	top:1px;
+}
+
+div.reg-sub {
+	float:left;
+	
+	background-color: #EEEEFF;
+    border-radius: 1em;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-top: 5px;
+    width: 360px;
+	
+	margin:30px;
+}
 /* This button was generated using CSSButtonGenerator.com */

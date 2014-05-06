@@ -10,21 +10,21 @@
 				</a>
 			</li>
 			<li>			
-				<a class="nav" title="Usuarios" href="<?=site_url('player')?>">
+				<a class="nav" title="Usuarios" href="<?=site_url('player/search')?>">
 					<span class="users-icon"><img src="/gtasa-mapicons/fac_blue.gif"/></span>
 					<span class="text">Usuarios</span>
 				</a>
 			</li>
 			<li>
-				<a class="nav" title="Propiedades" href="/">
-					<span class="properties-icon"><img src="/gtasa-mapicons/property_green.gif"/></span>
-					<span class="text">Propiedades</span>
+				<a class="nav" title="Bans" href="<?=site_url('bans/search')?>">
+					<span class="bans-icon"><img src="/gtasa-mapicons/property_red.gif"/></span>
+					<span class="text">Bans</span>
 				</a>
 			</li>
 			<li>
-				<a class="nav" title="Bans" href="<?=site_url('bans')?>">
-					<span class="bans-icon"><img src="/gtasa-mapicons/property_red.gif"/></span>
-					<span class="text">Bans</span>
+				<a class="nav" title="Propiedades" href="#">
+					<span class="properties-icon"><img src="/gtasa-mapicons/property_green.gif"/></span>
+					<span class="text">Propiedades</span>
 				</a>
 			</li>
 		</ul>

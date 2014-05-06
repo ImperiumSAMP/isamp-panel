@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "bans";
+$route['default_controller'] = "player";
 $route['404_override'] = '';
 
 

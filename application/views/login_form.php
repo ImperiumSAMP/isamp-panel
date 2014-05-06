@@ -19,6 +19,6 @@
 			<span class="field-input"><input type="password" name="password" value="" size="50" /></span>
 		</div>
 
-		<div><input type="submit" value="Iniciar sesi&oacute;n" class="login-button" /></div>
+		<div><input type="submit" value="Iniciar sesi&oacute;n" class="login-button" /><a class="register-button" href="<?=site_url("player/register")?>">Crear cuenta</a></div>
 	<?php echo form_close(); ?>
 </div>

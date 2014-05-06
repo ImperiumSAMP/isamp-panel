@@ -29,7 +29,7 @@ class Login extends CI_Controller {
 				if($redirect_url!="")
 					redirect(urldecode($redirect_url));
 				else
-					redirect('/index');
+					redirect('/');
 			} else {
 				$this->session->set_flashdata( 'message', 'Login inv&aacute;lido.' );
                 $this->session->set_flashdata('redirect_url',$this->session->flashdata('redirect_url'));
@@ -50,11 +50,20 @@ class Login extends CI_Controller {
 	}
 	
 	public function access_denied(){
+		$this->load->view("header.php",array('title'=>'Malos Aires Roleplay - Acceso denegado'));
+		$this->load->view("topbar.php");
+		$this->load->view("busted.php");
+		$this->load->view("footer.php");
 	}
 	
 	public function logout(){
 		$this->load->library('session');
 		$this->session->sess_destroy();
+		
+		$this->load->view("header.php",array('title'=>'Malos Aires Roleplay - Cerrar sesión'));
+		$this->load->view("topbar.php");
+		$this->load->view("logout.php");
+		$this->load->view("footer.php");
 	}
 	
 }
