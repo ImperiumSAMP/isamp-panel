@@ -48,8 +48,9 @@ class Player extends MY_Controller {
 	
 	private function actions($player){
 		$acts="";
-		$acts.=" Detalles";
-		$acts.=" Ver en mapa";
+		$acts.=anchor("player/user/".$player->Name,"<img src='/gtasa-mapicons/zoom.png' width='18px' height='18px'/>");
+		$acts.=anchor_popup("bans/ban/".$player->Id,'<img src="/gtasa-mapicons/property_red.gif"/>');
+		//$acts.=anchor("#",'<img src="/gtasa-mapicons/marker.gif"/>');
 		return $acts;
 	}
 

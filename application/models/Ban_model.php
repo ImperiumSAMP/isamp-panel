@@ -2,7 +2,7 @@
 
 class Ban_model extends MY_Model {
 
-	public $primary_key = 'pID';
+	protected $primary_key = 'pID';
 
     var $pID   = 0;
     var $pName = '';
@@ -37,12 +37,13 @@ class Ban_model extends MY_Model {
 		$this->banDate = date('Y-m-d H:i:s');
 		$this->banEnd = $dateend;
 		$this->banReason = $reason;
-		$this->banIssuerId = $issuer->Id;
-		$this->banIssuerName = $issuer->Name;
+		$this->banIssuerID = $issuer['Id'];
+		$this->banIssuerName = $issuer['Name'];
 		$this->banActive=1;
-		$this->banPanel=true;
+		$this->banPanel='Si';
 		
-		$this->db->save($this);
+		$this->insert($this);
+		return true;
 	}
 }
 ?>

@@ -33,12 +33,13 @@ class Bans extends MY_Controller {
 	
 	private function actions($ban){
 		$acts="";
-		if($ban->banActive==1)
-			$acts.=anchor_popup("bans/lift/".$ban->pID,"Levantar",array());
-		else
-			$acts.="Reactivar";
+		$acts.=anchor("player/user/".$ban->pName,"<img src='/gtasa-mapicons/zoom.png' width='18px' height='18px'/>");
 		
-		$acts.=" Detalles";
+		if($ban->banActive==1)
+			$acts.=anchor_popup("bans/lift/".$ban->pID,'<img src="/gtasa-mapicons/property_green.gif"/>');
+		else
+			$acts.=anchor_popup("bans/ban/".$ban->pID,'<img src="/gtasa-mapicons/property_red.gif"/>');
+		
 		return $acts;
 	}
 	
@@ -54,7 +55,7 @@ class Bans extends MY_Controller {
 		
 	}
 		
-	public function ban($playerid,$reason="",$dateEnd="NULL"){
+	public function ban($playerid,$reason="QuickBan (Panel)",$dateEnd="NULL"){
 		require_level(ACCLEVEL_ADMIN);
 		$this->load->model('ban_model');
 		$this->load->model('account_model');
