@@ -9,6 +9,14 @@
 					<span class="text">Inicio</span>
 				</a>
 			</li>
+			
+			<li id="global-nav-home" class="forum">
+				<a class="nav" title="forum" href="http://www.imperiumgames.com.ar/foro/f1025/">
+					<span class="home-icon"><img src="/gtasa-mapicons/castle.png" width="24px" height="24px"/></span>
+					<span class="text">Foros</span>
+				</a>
+			</li>
+			
 			<?php if(get_acclevel()>ACCLEVEL_USER) {?>
 			<li>			
 				<a class="nav" title="Usuarios" href="<?=site_url('player/search')?>">

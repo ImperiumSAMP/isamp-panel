@@ -6,29 +6,29 @@
 
 	<div id="player-basic-info">
 		<h2>Datos Básicos</h2>
-		<div class="field">Nombre: <?php echo $Player->Name ?></div>
-		<div class="field">Edad: <?php echo $Player->Age ?></div>
-		<div class="field">Nivel de admin: <?php echo $Player->AdminLevel ?></div>
-		<div class="field">Nivel: <?php echo $Player->Level ?></div>
-		<div class="field">Experiencia: <?php echo $Player->Exp ?></div>
-		<div class="field">Horas de juego: <?php echo $Player->PlayingHours ?></div>
+		<div class="field"><span>Nombre: </span><?php echo $Player->Name ?></div>
+		<div class="field"><span>Edad: </span><?php echo $Player->Age ?></div>
+		<div class="field"><span>Nivel de admin: </span><?php echo $Player->AdminLevel ?></div>
+		<div class="field"><span>Nivel: </span><?php echo $Player->Level ?></div>
+		<div class="field"><span>Experiencia: </span><?php echo $Player->Exp ?></div>
+		<div class="field"><span>Horas de juego: </span><?php echo $Player->PlayingHours ?></div>
 		<?php if($Job){ ?>
-		<div class="field">Trabajo: <?php echo $Job->jName ?></div>
+		<div class="field"><span>Trabajo: </span><?php echo $Job->jName ?></div>
 		<?php } ?>
 		<?php if($Faction){ ?>
-		<div class="field">Faccion: <?php echo $Faction->Name ?></div>
+		<div class="field"><span>Faccion: </span><?php echo $Faction->Name ?></div>
 		<?php } ?>
 	</div>
-	<div id="player-money">
-		<h2>Dinero</h3>
-		En mano: $<?php echo $Player->CashMoney ?> | En el banco: $<?php echo $Player->BankMoney ?>
+	<div id="player-money" class="field">
+		<h2>Dinero</h2>
+		<span>En mano: </span>$<?php echo $Player->CashMoney ?> | <span>En el banco:</span> $<?php echo $Player->BankMoney ?>
 	</div>
-	<div id="player-inventory">
+	<div id="player-inventory" class="field">
 		<h2>Inventario</h3>
-		Materiales: <?php echo $Player->Materials ?> | Tel&eacute;fono: <?php echo $Player->PhoneNumber ?> | Extras: -
+		<span>Materiales: </span><?php echo $Player->Materials ?> | <span>Tel&eacute;fono: </span><?php echo $Player->PhoneNumber ?> | <span>Extras: </span>-
 	</div>
 	
-	Licencias: 
+	<h2>Licencias: </h2>
 	<?php if($Player->CarLic) echo "<img src='/license-icons/car.png'/>"; ?>
 	<?php if($Player->FlyLic) echo "<img src='/license-icons/plane.png'/>"; ?>
 	<?php if($Player->WepLic) echo "<img src='/license-icons/gun.png'/>"; ?>

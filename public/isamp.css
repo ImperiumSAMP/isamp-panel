@@ -79,6 +79,20 @@ div.login-field{
 	float: left;
 }
 
+div.field {
+    color: #555566;
+    font-weight: 500;
+    line-height: 1;
+}
+
+div.field span{
+	font-family: diploma;
+	font-size: 1.2em;
+	color: #ffffff; 
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	margin-right: 5px;
+}
+
 .navigation-list {
 	float: left;
 	padding-top: 10px;
