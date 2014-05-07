@@ -3,7 +3,7 @@
 
 <script type="text/javascript">
 	function doSearch(){
-		location.assign('/<?=$module?>/search/'+document.getElementById('criteria').value)
+		location.assign('/<?=$module?>/search/byName/'+document.getElementById('criteria').value)
 	}
 </script>
 

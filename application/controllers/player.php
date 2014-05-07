@@ -5,9 +5,15 @@ class Player extends MY_Controller {
 	protected $_list_title="Lista de usuarios";
 	protected $_order="name";
 	protected $_order_direction="asc";
+	private $_search_by_ip=false;
 	
-	public function _generate_where($criteria){
-		return "name like '%$criteria%'";
+	public function _generate_where($criteria,$by){
+		switch($by){
+			case "byName": return "name like '%$criteria%'"; break;
+			case "byIP": return "IP like '%$criteria%'"; break;
+			case "byNameOrIp": return "name like '%$criteria%' or IP like '%$criteria%'"; break;
+			case default: return "";
+		}
 	}
 	
 	public function _set_table_heading($table){
@@ -56,6 +62,10 @@ class Player extends MY_Controller {
 
 	public function index(){
 		$this->user($this->session->userdata('Name'));
+	}
+	
+	public function search($by="byNameOrIp",$criteria="*",$page=1){
+		return parent::search($by,$criteria,$page);
 	}
 	
 	public function detail_popup($playerid){

@@ -29,20 +29,20 @@ abstract class MY_Controller extends CI_Controller
 		$this->search();
 	}
 	
-	public function search($criteria="_all",$page=1){
+	public function search($by="all",$criteria="*",$page=1){
 		require_level(ACCLEVEL_MODERATOR);
 		$this->load->model($this->_model,"mdl");
 		$this->load->library('table');
 		$this->load->library('pagination');
 				
 		$config['base_url'] = base_url("/".$this->module."/search/$criteria");
-		if($criteria=="_all") $criteria="";
-		$where=$this->_generate_where($criteria);
+		if($by=="all" || $criteria=="*") $criteria="";
+		$where=$this->_generate_where($criteria,$by);
 		$total = $this->mdl->count_by($where);
 
 		$config['total_rows'] = $total;
 		$config['per_page'] = 10;
-		$config['uri_segment']=4;
+		$config['uri_segment']=5;
 		$config['use_page_numbers'] = true;
 
 		$this->pagination->initialize($config);
@@ -68,7 +68,7 @@ abstract class MY_Controller extends CI_Controller
 		$title=$this->_list_title;
 		$this->load->view("header.php",array('title'=>$title));
 		$this->load->view("topbar.php");
-		$data=array('table'=>$table,'module'=>$this->module,'title'=>$title, 'pagination'=>$pagination);
+		$data=array('table'=>$table,'module'=>$this->module,'title'=>$title, 'pagination'=>$pagination, 'searchBy'=>$by);
 		$this->load->view("bans/list.php",$data);
 		$this->load->view("footer.php");
 	}

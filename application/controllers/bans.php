@@ -6,7 +6,7 @@ class Bans extends MY_Controller {
 	protected $_order="banDate";
 	protected $_order_direction="desc";
 	
-	public function _generate_where($criteria){
+	public function _generate_where($criteria,$by){
 		return "pName like '%$criteria%'";
 	}
 	
