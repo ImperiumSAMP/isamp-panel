@@ -25,7 +25,7 @@
 	</div>
 	<div id="player-inventory">
 		<h2>Inventario</h3>
-		Materiales: <?php echo $Player->Materials ?> | Drogas: <?php echo $Player->Drugs ?> | Teléfono: <?php echo $Player->PhoneNumber ?> | Extras: -
+		Materiales: <?php echo $Player->Materials ?> | Tel&eacute;fono: <?php echo $Player->PhoneNumber ?> | Extras: -
 	</div>
 	
 	Licencias: 
