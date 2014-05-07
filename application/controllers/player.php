@@ -12,7 +12,7 @@ class Player extends MY_Controller {
 			case "byName": return "name like '%$criteria%'"; break;
 			case "byIP": return "IP like '%$criteria%'"; break;
 			case "byNameOrIp": return "name like '%$criteria%' or IP like '%$criteria%'"; break;
-			case default: return "";
+			default: return "";
 		}
 	}
 	
@@ -64,7 +64,7 @@ class Player extends MY_Controller {
 		$this->user($this->session->userdata('Name'));
 	}
 	
-	public function search($by="byNameOrIp",$criteria="*",$page=1){
+	public function search($by="byNameOrIp",$criteria="_",$page=1){
 		return parent::search($by,$criteria,$page);
 	}
 	

@@ -13,11 +13,11 @@ abstract class MY_Controller extends CI_Controller
 	
 	public function __construct()
     {
-		$this->module=get_class($this);
+		$this->module=strtolower(get_class($this));
         parent::__construct();
 	}
 	
-	public abstract function _generate_where($criteria);
+	public abstract function _generate_where($criteria,$by);
 	public abstract function _set_table_heading($criteria);
 	public abstract function _add_row_to_table($table,$rowdata);
 	
@@ -29,14 +29,14 @@ abstract class MY_Controller extends CI_Controller
 		$this->search();
 	}
 	
-	public function search($by="all",$criteria="*",$page=1){
+	public function search($by="all",$criteria="_",$page=1){
 		require_level(ACCLEVEL_MODERATOR);
 		$this->load->model($this->_model,"mdl");
 		$this->load->library('table');
 		$this->load->library('pagination');
 				
 		$config['base_url'] = base_url("/".$this->module."/search/$criteria");
-		if($by=="all" || $criteria=="*") $criteria="";
+		if($by=="all" || $criteria=="_") $criteria="";
 		$where=$this->_generate_where($criteria,$by);
 		$total = $this->mdl->count_by($where);
 

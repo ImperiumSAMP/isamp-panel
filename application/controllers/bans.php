@@ -31,6 +31,10 @@ class Bans extends MY_Controller {
 			return "<div id='false'></div>";
 	}
 	
+	public function search($by="byName",$criteria="_",$page=1){
+		return parent::search($by,$criteria,$page);
+	}
+	
 	private function actions($ban){
 		$acts="";
 		$acts.=anchor("player/user/".$ban->pName,"<img src='/gtasa-mapicons/zoom.png' width='18px' height='18px'/>");
