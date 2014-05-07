@@ -57,11 +57,8 @@ abstract class MY_Controller extends CI_Controller
 			$this->table->set_template($tmpl); 
 			$this->_set_table_heading($this->table);
 
-			if(count($list)==1)
-				$this->_add_row_to_table($this->table,$list);
-			else
-				foreach($list as $item)
-					$this->_add_row_to_table($this->table,$item);				
+			foreach($list as $item)
+				$this->_add_row_to_table($this->table,$item);				
 		
 			$table=$this->table->generate();
 		} else $table = "No se encontraron resultados";
