@@ -9,6 +9,7 @@
 					<span class="text">Inicio</span>
 				</a>
 			</li>
+			<?php if(get_acclevel()>ACCLEVEL_USER) {?>
 			<li>			
 				<a class="nav" title="Usuarios" href="<?=site_url('player/search')?>">
 					<span class="users-icon"><img src="/gtasa-mapicons/fac_blue.gif"/></span>
@@ -27,6 +28,7 @@
 					<span class="text">Propiedades</span>
 				</a>
 			</li>
+			<?php } ?>
 		</ul>
 	</div>
 	<div id="session-info">

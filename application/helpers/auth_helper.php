@@ -25,3 +25,8 @@ function require_level($level){
 	$CI =& get_instance();	
 	return $CI->isamp_auth->require_level($level);
 }
+
+function get_acclevel(){
+	$CI =& get_instance();	
+	return $CI->isamp_auth->get_acclevel();
+}

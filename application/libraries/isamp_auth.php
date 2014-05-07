@@ -47,4 +47,8 @@ class Isamp_auth {
 		return true;
 	}
 	
+	public function get_acclevel(){
+		return $this->CI->session->userdata('AdminLevel');
+	}
+	
 }
