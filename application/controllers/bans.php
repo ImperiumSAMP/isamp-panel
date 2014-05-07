@@ -1,7 +1,7 @@
 <?php
 class Bans extends MY_Controller {
 
-	protected $_model="ban_model";
+	protected $_model="Ban_model";
 	protected $_list_title="Lista de Bans";
 	protected $_order="banDate";
 	protected $_order_direction="desc";
