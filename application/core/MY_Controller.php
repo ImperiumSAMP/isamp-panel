@@ -35,7 +35,7 @@ abstract class MY_Controller extends CI_Controller
 		$this->load->library('table');
 		$this->load->library('pagination');
 				
-		$config['base_url'] = base_url("/".$this->module."/search/$criteria");
+		$config['base_url'] = base_url("/".$this->module."/search/$by/$criteria");
 		if($by=="all" || $criteria=="_") $criteria="";
 		$where=$this->_generate_where($criteria,$by);
 		$total = $this->mdl->count_by($where);

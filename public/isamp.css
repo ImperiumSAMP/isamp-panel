@@ -18,6 +18,8 @@ ol, ul {
     width: 100%;
 	background: none repeat scroll 0 0 #FFFFFF;	
 	padding-left: 50px;
+	font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+	font-size: 14px;
 }
 
 div.main-content{
@@ -52,6 +54,14 @@ div.login-form{
     padding-left: 30px;
     padding-top: 5px;
     width: 360px;
+}
+
+body {
+	font-family:Open sans;
+}
+
+h1{
+	font-family: Montserrat;	
 }
 
 h2{
@@ -104,8 +114,8 @@ div.field span{
 
 .navigation-list > li > a, .nav > li > button {
     color: #555566;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 200;
     height: 46px;
     line-height: 1;
     padding: 0 14px 0 4px;
@@ -231,5 +241,10 @@ div.reg-sub {
     width: 360px;
 	
 	margin:30px;
+}
+
+div.register-form{
+	margin-top: 40px;
+	margin-left: 30px;
 }
 /* This button was generated using CSSButtonGenerator.com */

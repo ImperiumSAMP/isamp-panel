@@ -1,5 +1,5 @@
 <div class="register-form">
-	<h1>Ciudad de Malos Aires</h1>
+	<div id="title" valign="center"><h1><img src="/citylogo.jpg" width="60px">Ciudad de Malos Aires</h1></div>
 
 	<h2>Formulario de solicitud de ciudadan&iacute;a</h2>
 	
@@ -52,6 +52,11 @@
 			<div class="login-field">
 				<span class="field-title"><h5>Edad</h5></span>
 				<span class="field-input"><input type="text" name="realage" value="<?php echo set_value('realage')?>" size="50" /></span>
+			</div>
+			
+			<div class="login-field">
+				<span class="field-title"><h5>E-Mail</h5></span>
+				<span class="field-input"><input type="text" name="email" value="<?php echo set_value('email')?>" size="50" /></span>
 			</div>
 			
 			<div class="login-field">
