@@ -12,11 +12,13 @@ ol, ul {
 .topbar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     height: 46px;
+	width: 600px;
     position: fixed;
 	top: 28px;
 	left: 0;
     width: 100%;
-	background: none repeat scroll 0 0 #FFFFFF;	
+	background:url(http://i.imgur.com/VP2miNb.png)fixed center top no-repeat;
+	/* cambiar url por dirección en el host */
 	padding-left: 50px;
 	font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
 	font-size: 14px;
@@ -24,17 +26,21 @@ ol, ul {
 
 div.main-content{
 	margin-top: 95px;
-	margin-left: 45px;
+	width: 1000px;
+	margin-left:auto;
+	margin-right:auto;
+	/* no funca margin auto */
+	color:#FFF
 }
 
 @font-face {
 	font-family: pricedown;
-	src: url(/fonts/pricedown.ttf);
+	src: url(fonts/pricedown.ttf);
 }
 
 @font-face {
 	font-family: diploma;
-	src: url(/fonts/diploma.ttf);
+	src: url(fonts/diploma.ttf);
 }
 
 div.validation-errors p  {
@@ -46,9 +52,10 @@ div.validation-errors p  {
 }
 
 div.login-form{
-	margin-top: 45px;
-	margin-left: 25px;
-    background-color: #EEEEFF;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+    background-color: rgba(255, 255, 255, .3);
     border-radius: 1em;
     padding-bottom: 10px;
     padding-left: 30px;
@@ -58,6 +65,9 @@ div.login-form{
 
 body {
 	font-family:Open sans;
+	background:url(http://i.imgur.com/VP2miNb.png)fixed center top no-repeat;
+	/* Cambiar link al host */
+	background-color:#000}
 }
 
 h1{
@@ -65,15 +75,16 @@ h1{
 }
 
 h2{
-	font-family: pricedown;	
+	font-family: Montserrat;
 	font-size: 2em;
-	color: #ffffff; 
-	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	color: #ffffff;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;*/
+	text-align: left;
 }
 
 h5{
-	font-family: diploma;	
-	font-size: 1.2em;
+	font-family: Montserrat;	
+/*	font-size: .75em;*/
 	color: #ffffff; 
 	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 	margin-bottom: 5px;
@@ -90,15 +101,15 @@ div.login-field{
 }
 
 div.field {
-    color: #555566;
+    color: #ccc;
     font-weight: 500;
     line-height: 1;
 }
 
 div.field span{
-	font-family: diploma;
-	font-size: 1.2em;
-	color: #ffffff; 
+	font-family: Montserrat;
+	font-size: 15px;
+	color: #ffffff;
 	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 	margin-right: 5px;
 }
@@ -127,10 +138,11 @@ div.field span{
 
 .navigation-list a:hover {
 	text-decoration: underline;
-	color: #009999;
+	color: #FFFFFF;
 }
 
 #session-info {
+    color:#ccc;
 	float:right;
 	width:200px;
 }
@@ -141,12 +153,12 @@ div.field span{
 .login-button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
-	box-shadow:inset 0px 1px 0px 0px #f29c93;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
-	background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
-	background-color:#fe1a00;
-	-webkit-border-top-left-radius:15px;
+	/*box-shadow:inset 0px 1px 0px 0px #f29c93;*/
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cd4131), color-stop(1, #a62828) );
+	background:-moz-linear-gradient( center top, #cd4131 5%, #a62828 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cd4131', endColorstr='#a62828');
+	background-color:#cd4131;
+	/*-webkit-border-top-left-radius:15px;
 	-moz-border-radius-topleft:15px;
 	border-top-left-radius:15px;
 	-webkit-border-top-right-radius:15px;
@@ -157,7 +169,7 @@ div.field span{
 	border-bottom-right-radius:15px;
 	-webkit-border-bottom-left-radius:15px;
 	-moz-border-radius-bottomleft:15px;
-	border-bottom-left-radius:15px;
+	border-bottom-left-radius:15px;*/
 	text-indent:0;
 	border:1px solid #d83526;
 	display:inline-block;
@@ -166,7 +178,7 @@ div.field span{
 	font-size:15px;
 	font-weight:bold;
 	font-style:normal;
-	height:36px;
+	height:38px;
 	line-height:36px;
 	width:122px;
 	text-decoration:none;
@@ -174,10 +186,10 @@ div.field span{
 	text-shadow:1px 1px 0px #b23e35;
 }
 .login-button:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
-	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
-	background-color:#ce0100;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a62828), color-stop(1, #cd4131) );
+	background:-moz-linear-gradient( center top, #a62828 5%, #cd4131 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a62828', endColorstr='#cd4131');
+	background-color:#a62828;
 }.login-button:active {
 	position:relative;
 	top:1px;
@@ -187,12 +199,12 @@ div.field span{
 .register-button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #9ce293;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #9ce293;
-	box-shadow:inset 0px 1px 0px 0px #9ce293;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #001afe), color-stop(1, #00ce01) );
-	background:-moz-linear-gradient( center top, #00ee1a 5%, #00ce01 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fe1a', endColorstr='#00ce01');
-	background-color:#00fe1a;
-	-webkit-border-top-left-radius:15px;
+	/*box-shadow:inset 0px 1px 0px 0px #9ce293;*/
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #001afe), color-stop(1, #4cb256) );
+	background:-moz-linear-gradient( center top, #00ee1a 5%, #4cb256 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d903d', endColorstr='#4cb256');
+	background-color:#3d903d;
+	/*-webkit-border-top-left-radius:15px;
 	-moz-border-radius-topleft:15px;
 	border-top-left-radius:15px;
 	-webkit-border-top-right-radius:15px;
@@ -203,7 +215,7 @@ div.field span{
 	border-bottom-right-radius:15px;
 	-webkit-border-bottom-left-radius:15px;
 	-moz-border-radius-bottomleft:15px;
-	border-bottom-left-radius:15px;
+	border-bottom-left-radius:15px;*/
 	text-indent:0;
 	border:1px solid #35d826;
 	display:inline-block;
@@ -221,10 +233,10 @@ div.field span{
 	margin-left: 15px;
 }
 .register-button:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00ce01), color-stop(1, #00ee1a) );
-	background:-moz-linear-gradient( center top, #00ce01 5%, #00ee1a 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ce01', endColorstr='#00ee1a');
-	background-color:#00ce01;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4cb256), color-stop(1, #00ee1a) );
+	background:-moz-linear-gradient( center top, #4cb256 5%, #00ee1a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4cb256', endColorstr='#00ee1a');
+	background-color:#4cb256;
 }.register-button:active {
 	position:relative;
 	top:1px;
@@ -233,18 +245,28 @@ div.field span{
 div.reg-sub {
 	float:left;
 	
-	background-color: #EEEEFF;
+    background-color: rgba(255, 255, 255, .3);
     border-radius: 1em;
     padding-bottom: 10px;
     padding-left: 30px;
     padding-top: 5px;
     width: 360px;
-	
 	margin:30px;
 }
 
 div.register-form{
 	margin-top: 40px;
-	margin-left: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1150px;
+	color:#FFF;
 }
+
+a:link, a:visited, a:active
+{
+text-decoration: none;
+color: #fff;
+}
+
+
 /* This button was generated using CSSButtonGenerator.com */
