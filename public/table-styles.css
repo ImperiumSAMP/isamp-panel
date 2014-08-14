@@ -73,7 +73,7 @@ body
 	font-size: 12px;
 	margin: 45px;
 	width: 480px;
-	text-align: left;
+	text-align: center;
 	border-collapse: collapse;
 }
 #ver-minimalist th
@@ -469,28 +469,28 @@ body
 	font-size: 13px;
 	font-weight: normal;
 	padding: 8px;
-	background: #b9c9fe url('table-images/gradhead.png') repeat-x;
-	border-top: 2px solid #d3ddff;
-	border-bottom: 1px solid #fff;
-	color: #039;
+	background: rgba(255, 255, 255, .35) /* color fondo titulo  url('http://www.isamp.com.ar/table-images/gradhead.p') repeat-x*/;
+	border-top: 2px solid #000; /* color linea */
+	border-bottom: 1px solid #000;
+	color: #000; /* color texto titulo */
 }
 #gradient-style td
 {
 	padding: 8px; 
-	border-bottom: 1px solid #fff;
-	color: #669;
-	border-top: 1px solid #fff;
-	background: #e8edff url('table-images/gradback.png') repeat-x;
+	border-bottom: 1px solid #000;
+	color: #000; /* color texto datos */
+	border-top: 1px solid #000;
+	background: rgba(255, 255, 255, .5) /* color fondo datos  url('http://www.isamp.com.ar/table-images/gradback.p') repeat-x*/;
 }
 #gradient-style tfoot tr td
 {
 	background: #e8edff;
 	font-size: 12px;
-	color: #99c;
+	color: #000;
 }
 #gradient-style tbody tr:hover td
 {
-	background: #d0dafd url('table-images/gradhover.png') repeat-x;
+	background: rgba(255, 255, 255, .6);/*('table-images/gradhover.p') repeat-x;*/
 	color: #339;
 }
 
@@ -564,4 +564,9 @@ body
 {
 	color: #339;
 	background: #cdcdee;
+}.topbar .topbar-content div .navigation-list #global-nav-home .nav .text {
+	color: #FFFFFF;
+}
+.topbar .topbar-content div .navigation-list li .nav .text {
+	color: #FFFFFF;
 }
