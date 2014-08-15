@@ -17,7 +17,7 @@ ol, ul {
 	top: 28px;
 	left: 0;
     width: 100%;
-	background:url(http://i.imgur.com/VP2miNb.png)fixed center top no-repeat;
+	background:url(http://i.imgur.com/tszDFsb.png)fixed center top no-repeat;
 	/* cambiar url por dirección en el host */
 	padding-left: 50px;
 	font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
@@ -26,7 +26,7 @@ ol, ul {
 
 div.main-content{
 	margin-top: 95px;
-	width: 1000px;
+	width: 870px;
 	margin-left:auto;
 	margin-right:auto;
 	/* no funca margin auto */
@@ -65,7 +65,7 @@ div.login-form{
 
 body {
 	font-family:Open sans;
-	background:url(http://i.imgur.com/VP2miNb.png)fixed center top no-repeat;
+	background:url(http://i.imgur.com/yiajdZf.png)fixed center top no-repeat;
 	/* Cambiar link al host */
 	background-color:#000}
 }
