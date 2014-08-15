@@ -1,5 +1,5 @@
 <div class="register-form">
-	<div id="title" valign="center"><h1><img src="/citylogo.jpg" width="60px">Ciudad de Malos Aires</h1></div>
+	<div id="title" valign="center"><h1><img src="/citylogo.png" width="60px">Ciudad de Malos Aires</h1></div>
 
 	<h2>Formulario de solicitud de ciudadan&iacute;a</h2>
 	
