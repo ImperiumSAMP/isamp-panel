@@ -14,7 +14,7 @@ ol, ul {
     height: 46px;
 	width: 600px;
     position: fixed;
-	top: 28px;
+	top: 0px;
 	left: 0;
     width: 100%;
 	background:url(http://i.imgur.com/tszDFsb.png)fixed center top no-repeat;
@@ -60,7 +60,7 @@ div.login-form{
     padding-bottom: 10px;
     padding-left: 30px;
     padding-top: 5px;
-    width: 360px;
+    width: 500px;
 }
 
 body {
@@ -242,6 +242,52 @@ div.field span{
 	top:1px;
 }
 
+.forum-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #9c93e2;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #9c93e2;
+	/*box-shadow:inset 0px 1px 0px 0px #9ce293;*/
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00fe1a), color-stop(1, #2c36b2) );
+	background:-moz-linear-gradient( center top, #001aee 5%, #2c36b2 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d903d', endColorstr='#4cb256');
+	background-color:#3d3d90;
+	/*-webkit-border-top-left-radius:15px;
+	-moz-border-radius-topleft:15px;
+	border-top-left-radius:15px;
+	-webkit-border-top-right-radius:15px;
+	-moz-border-radius-topright:15px;
+	border-top-right-radius:15px;
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	border-bottom-right-radius:15px;
+	-webkit-border-bottom-left-radius:15px;
+	-moz-border-radius-bottomleft:15px;
+	border-bottom-left-radius:15px;*/
+	text-indent:0;
+	border:1px solid #3526d8;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:36px;
+	line-height:36px;
+	width:122px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #3e35b2;
+	margin-left: 15px;
+}
+.forum-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3c46b2), color-stop(1, #001aee) );
+	background:-moz-linear-gradient( center top, #3c46b2 5%, #001aee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c56b2', endColorstr='#001aee');
+	background-color:#4c56b2;
+}.forum-button:active {
+	position:relative;
+	top:1px;
+}
+
 div.reg-sub {
 	float:left;
 	
@@ -260,6 +306,12 @@ div.register-form{
 	margin-right: auto;
 	width: 1150px;
 	color:#FFF;
+}
+
+div#player-details {
+    background-color: rgba(100, 100, 100, 0.5);
+    padding: 60px;
+    border-radius: 45px;
 }
 
 a:link, a:visited, a:active

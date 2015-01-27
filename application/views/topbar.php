@@ -11,7 +11,7 @@
 			</li>
 			
 			<li id="global-nav-home" class="forum">
-				<a class="nav" title="forum" href="http://www.imperiumgames.com.ar/foro/f1025/">
+				<a class="nav" title="forum" href="http://www.pheek.net/foro/forumdisplay.php?fid=51">
 					<span class="home-icon"><img src="/gtasa-mapicons/castle.png" width="24px" height="24px"/></span>
 					<span class="text">Foros</span>
 				</a>

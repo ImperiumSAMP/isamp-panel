@@ -1,11 +1,11 @@
 <div class="main-content">
 <div id="player-details">
-	<div id="player-detail-skin" style="float: left; padding-right: 50px;">
-		<img src="<?php echo strlen($Player->Skin)>1 ? '/skins/'.$Player->Skin.'.jpg' : '/skins/0'.$Player->Skin.'.jpg'; ?>" />
+	<div id="player-detail-skin" style="border-radius:20px; width:150px; height: 150px; background-image: url(/skins/<?=$Player->Skin > 10 ? $Player->Skin : "0".$Player->Skin ?>.jpg)">
+		<img src="http://www.gifde.com/gif/otros/oficina/clips/clip-006.png" width="35px" height="35px" />
 	</div>
 
 	<div id="player-basic-info">
-		<h2>Datos Básicos</h2>
+		<h2>Datos B&aacute;sicos</h2>
 		<div class="field"><span>Nombre: </span><?php echo $Player->Name ?></div>
 		<div class="field"><span>Edad: </span><?php echo $Player->Age ?></div>
 		<div class="field"><span>Nivel de admin: </span><?php echo $Player->AdminLevel ?></div>
@@ -25,7 +25,7 @@
 	</div>
 	<div id="player-inventory" class="field">
 		<h2>Inventario</h3>
-		<span>Materiales: </span><?php echo $Player->Materials ?> | <span>Tel&eacute;fono: </span><?php echo $Player->PhoneNumber ?> | <span>Extras: </span>-
+		<span>Tel&eacute;fono: </span><?php echo $Player->PhoneNumber ?> | <span>Extras: </span>-
 	</div>
 	
 	<h2>Licencias: </h2>
