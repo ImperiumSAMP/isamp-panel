@@ -30,6 +30,14 @@
 					<span class="text">Bans</span>
 				</a>
 			</li>
+			
+			<li>
+				<a class="nav" title="Comandos" href="<?=site_url('commands/search')?>">
+					<span class="commands-icon"><img src="/gtasa-mapicons/marker.gif"/></span>
+					<span class="text">Comandos</span>
+				</a>
+			</li>
+			
 			<li>
 				<a class="nav" title="Propiedades" href="#">
 					<span class="properties-icon"><img src="/gtasa-mapicons/property_green.gif"/></span>
