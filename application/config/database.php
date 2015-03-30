@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'iroleplay';
-$db['default']['password'] = '';
-$db['default']['database'] = 'iroleplay';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '0110111';
+$db['default']['database'] = 'isamp_test';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

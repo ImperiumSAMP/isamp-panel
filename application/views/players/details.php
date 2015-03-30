@@ -1,5 +1,6 @@
 <div class="main-content">
 <div id="player-details">
+    <div id="notification_area"><?=$Notifications?></div>
 	<div id="player-detail-skin" style="border-radius:20px; width:150px; height: 150px; background-image: url(/skins/<?=$Player->Skin > 10 ? $Player->Skin : "0".$Player->Skin ?>.jpg)">
 		<img src="http://www.gifde.com/gif/otros/oficina/clips/clip-006.png" width="35px" height="35px" />
 	</div>

@@ -94,13 +94,43 @@ class Player extends MY_Controller {
 		$this->load->view("footer.php");
 	}
 	
-	public function _show_details($account){
+	public function _show_details($account,$notifications=""){
 		$this->load->model('Job_model','job');
 		$this->load->model('Faction_model','faction');
 		
 		$job=$this->job->get($account->Job);
 		$faction=$this->faction->get($account->Faction);
 		
-		$this->load->view('players/details.php',array('Player' => $account, 'Job' =>  $job, 'Faction' => $faction));
+		$this->load->view('players/details.php',array('Notifications' => $notifications, 'Player' => $account, 'Job' =>  $job, 'Faction' => $faction));
+	}
+	
+	public function create(){
+	    require_level(ACCLEVEL_MODERATOR); 
+	    $this->load->model('Account_model','account');
+	    $this->load->helper('string');
+	    $this->load->helper('security');
+	    
+	    $name=$this->input->post("name");
+	    
+	    if($name!=""){
+	        $pass=random_string("numeric","6");
+	        $userid=$this->account->insert( array('Name' => $name));    
+	        
+	        if($userid!=FALSE){
+	           		$this->load->view("header.php",array('title'=>"Malos Aires Roleplay - Ficha del ciudadano $name"));
+		            $this->load->view("topbar.php"); 
+		            //$this->load->view('players/created.php',array('Player' => $name,'Password' => $pass));
+		            $account=$this->account->get($userid);
+		            $this->_show_details($account,"Registrado el usuario <b>$name</b> con password <b>$pass</b>");
+		            $this->load->view("footer.php");
+	        }
+	    } else {
+	        $this->load->helper(array('form', 'url'));
+	        $this->load->view("header.php",array('title'=>"Malos Aires Roleplay - Nueva ciudadan&iacute;a"));
+	        $this->load->view("topbar.php");
+	        $this->load->view("players/create.php");
+            $this->load->view("footer.php");	    
+	    }
+	    
 	}
 }
