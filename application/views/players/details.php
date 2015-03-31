@@ -34,5 +34,10 @@
 	<?php if($Player->FlyLic) echo "<img src='/license-icons/plane.png'/>"; ?>
 	<?php if($Player->WepLic) echo "<img src='/license-icons/gun.png'/>"; ?>
 
+    <?php print_if_level(ACCLEVEL_MODERATOR,"<h2>Acciones administrativas</h2>".anchor("player/create/".$Player->Name,"Resetear password"));?>
+    
+    
+    
+
 </div>
 </div>

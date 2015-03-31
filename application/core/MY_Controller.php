@@ -9,6 +9,7 @@ abstract class MY_Controller extends CI_Controller
 	protected $_model;
 	protected $_order;
 	protected $_order_direction;
+	protected $_view="list.php";
 	protected $module;
 	
 	public function __construct()
@@ -66,7 +67,7 @@ abstract class MY_Controller extends CI_Controller
 		$this->load->view("header.php",array('title'=>$title));
 		$this->load->view("topbar.php");
 		$data=array('table'=>$table,'module'=>$this->module,'title'=>$title, 'pagination'=>$pagination, 'searchBy'=>$by);
-		$this->load->view("bans/list.php",$data);
+		$this->load->view($this->_view,$data);
 		$this->load->view("footer.php");
 	}
 	

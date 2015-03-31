@@ -72,4 +72,14 @@ class Account_model extends MY_Model {
 		return $this->get_by(array('Name' => $name));
 	}
 	
+	function resetuser($name,$password){
+	    $user=$this->get_by(array('Name' => $name));
+        if(isset($user) && $user!=null && $user != array()){
+            $this->update($user->Id,array('Password' => md5($password)));
+            return $user->Id;
+        } else {
+            return $this->insert(array('Name' => $name, 'Password' => md5));
+        }
+	}
+	
 }

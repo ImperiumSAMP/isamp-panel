@@ -5,6 +5,7 @@ class Player extends MY_Controller {
 	protected $_list_title="Lista de usuarios";
 	protected $_order="name";
 	protected $_order_direction="asc";
+	protected $_view="players/list.php";
 	private $_search_by_ip=false;
 	
 	public function _generate_where($criteria,$by){
@@ -104,17 +105,18 @@ class Player extends MY_Controller {
 		$this->load->view('players/details.php',array('Notifications' => $notifications, 'Player' => $account, 'Job' =>  $job, 'Faction' => $faction));
 	}
 	
-	public function create(){
+	public function create($name=""){
 	    require_level(ACCLEVEL_MODERATOR); 
 	    $this->load->model('Account_model','account');
 	    $this->load->helper('string');
 	    $this->load->helper('security');
 	    
-	    $name=$this->input->post("name");
+	    if($name=="")
+	        $name=$this->input->post("name");
 	    
 	    if($name!=""){
 	        $pass=random_string("numeric","6");
-	        $userid=$this->account->insert( array('Name' => $name));    
+	        $userid=$this->account->resetuser($name, $pass);    
 	        
 	        if($userid!=FALSE){
 	           		$this->load->view("header.php",array('title'=>"Malos Aires Roleplay - Ficha del ciudadano $name"));
