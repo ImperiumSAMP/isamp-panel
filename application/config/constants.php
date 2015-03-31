@@ -43,7 +43,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 */
 
 define('ACCLEVEL_USER',0);
-define('ACCLEVEL_MODERATOR',1);
+define('ACCLEVEL_MODERATOR',2);
 define('ACCLEVEL_ADMIN',10);
 define('ACCLEVEL_SUPERADMIN',20);
 
