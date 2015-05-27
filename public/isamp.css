@@ -17,7 +17,7 @@ ol, ul {
 	top: 0px;
 	left: 0;
     width: 100%;
-	background:url(http://i.imgur.com/tszDFsb.png)fixed center top no-repeat;
+	background:url(/fondobarra.png)fixed center top no-repeat;
 	/* cambiar url por dirección en el host */
 	padding-left: 50px;
 	font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
@@ -51,6 +51,16 @@ div.validation-errors p  {
     width: 320px;
 }
 
+p.validation-errors  {
+	background-color: #FDDDDD;
+    border-radius: 0.3em;
+    color: #EE1010;
+    padding-left: 8px;
+    width: 310px;
+    margin-top: 0px;
+    margin-botton: 8px;
+}
+
 div.login-form{
 	margin-top: 100px;
 	margin-left: auto;
@@ -65,7 +75,7 @@ div.login-form{
 
 body {
 	font-family:Open sans;
-	background:url(http://i.imgur.com/yiajdZf.png)fixed center top no-repeat;
+	background:url(/fondo.png)fixed center top no-repeat;
 	/* Cambiar link al host */
 	background-color:#000}
 }
@@ -296,7 +306,7 @@ div.reg-sub {
     padding-bottom: 10px;
     padding-left: 30px;
     padding-top: 5px;
-    width: 360px;
+    width: 400px;
 	margin:30px;
 }
 

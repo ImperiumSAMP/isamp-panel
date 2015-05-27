@@ -9,7 +9,7 @@
 
 <form action="#" onsubmit="doSearch()">
 	<input type="text" id="criteria" /> 
-	<input type="submit" o value="Buscar" class="login-button" />
+	<input type="submit" value="Buscar" class="login-button" />
 </form>
 <?=$pagination?>
 <?php echo $table;?>

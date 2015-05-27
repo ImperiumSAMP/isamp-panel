@@ -29,8 +29,9 @@ class Commands extends MY_Controller {
 	
 	private function actions($cmd,$urlappend=""){
 		$acts="";
-		$acts.=anchor("commands/levelup/" . $cmd->command,'<img src="/gtasa-mapicons/marker.gif"/>');
-		$acts.=anchor("commands/leveldn/" . $cmd->command,'<img src="/gtasa-mapicons/marker.gif"/>');
+		$acts.=anchor("commands/levelup/" . $cmd->command,'<img title="Subir nivel" src="/gtasa-mapicons/marker.gif"/>');
+		$acts.="&nbsp;";
+		$acts.=anchor("commands/leveldn/" . $cmd->command,'<img title="Bajar nivel" src="/gtasa-mapicons/marker.gif"/>');
 		return $acts;
 	}
 	

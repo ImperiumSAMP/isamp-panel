@@ -48,15 +48,16 @@ class Player extends MY_Controller {
 		$this->load->helper(array('form', 'url'));
 		$this->load->library(array('form_validation','session'));
 		$this->load->view("header.php",array('title'=>'Registro de usuarios'));
-		//$this->load->view("topbar.php");
-		$this->load->view("register_form.php");
+		
+		$this->load->view("register/form.php");
+		    
 		$this->load->view("footer.php");
 	}
 	
 	private function actions($player){
 		$acts="";
-		$acts.=anchor("player/user/".$player->Name,"<img src='/gtasa-mapicons/zoom.png' width='18px' height='18px'/>");
-		$acts.=anchor_popup("bans/ban/".$player->Id,'<img src="/gtasa-mapicons/property_red.gif"/>');
+		$acts.=anchor("player/user/".$player->Name,"<img src='/gtasa-mapicons/zoom.png' title='Detalles' width='18px' height='18px'/>");
+		$acts.=anchor_popup("bans/ban/".$player->Id,'<img src="/gtasa-mapicons/property_red.gif" title="Banear"/>');
 		//$acts.=anchor("#",'<img src="/gtasa-mapicons/marker.gif"/>');
 		return $acts;
 	}

@@ -4,14 +4,14 @@
 		
 		<ul class="navigation-list">
 			<li id="global-nav-home" class="home">
-				<a class="nav" title="Inicio" href="<?=site_url('/')?>">
+				<a class="nav" href="<?=site_url('/')?>">
 					<span class="home-icon"><img src="/gtasa-mapicons/player.gif"/></span>
 					<span class="text">Inicio</span>
 				</a>
 			</li>
 			
 			<li id="global-nav-home" class="forum">
-				<a class="nav" title="forum" href="http://www.pheek.net/foro/forumdisplay.php?fid=51">
+				<a class="nav" href="http://www.pheek.net/foro/forumdisplay.php?fid=51">
 					<span class="home-icon"><img src="/gtasa-mapicons/castle.png" width="24px" height="24px"/></span>
 					<span class="text">Foros</span>
 				</a>
@@ -19,27 +19,33 @@
 			
 			<?php if(get_acclevel()>ACCLEVEL_USER) {?>
 			<li>			
-				<a class="nav" title="Usuarios" href="<?=site_url('player/search')?>">
+				<a class="nav" href="<?=site_url('player/search')?>">
 					<span class="users-icon"><img src="/gtasa-mapicons/fac_blue.gif"/></span>
 					<span class="text">Usuarios</span>
 				</a>
 			</li>
+			<li>			
+				<a class="nav" href="<?=site_url('certification')?>">
+					<span class="users-icon"><img src="/gtasa-mapicons/fac_green.gif"/></span>
+					<span class="text">Certificación</span>
+				</a>
+			</li>
 			<li>
-				<a class="nav" title="Bans" href="<?=site_url('bans/search')?>">
+				<a class="nav" href="<?=site_url('bans/search')?>">
 					<span class="bans-icon"><img src="/gtasa-mapicons/property_red.gif"/></span>
 					<span class="text">Bans</span>
 				</a>
 			</li>
 			
 			<li>
-				<a class="nav" title="Comandos" href="<?=site_url('commands/search')?>">
+				<a class="nav" href="<?=site_url('commands/search')?>">
 					<span class="commands-icon"><img src="/gtasa-mapicons/marker.gif"/></span>
 					<span class="text">Comandos</span>
 				</a>
 			</li>
 			
 			<li>
-				<a class="nav" title="Propiedades" href="#">
+				<a class="nav" href="#">
 					<span class="properties-icon"><img src="/gtasa-mapicons/property_green.gif"/></span>
 					<span class="text">Propiedades</span>
 				</a>

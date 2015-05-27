@@ -19,6 +19,6 @@
 			<span class="field-input"><input type="password" name="password" value="" size="50" /></span>
 		</div>
 
-		<div><input type="submit" value="Iniciar sesi&oacute;n" class="login-button" /><a class="register-button" href="<?=/*site_url("player/register")*/"http://www.pheek.net/foro/showthread.php?tid=115"?>">Crear cuenta</a><a class="forum-button" href="http://www.pheek.net/foro">Ir a los Foros</a></div>
+		<div><input type="submit" value="Iniciar sesi&oacute;n" class="login-button" /><a class="register-button" href="<?=site_url("register")?>">Crear cuenta</a><a class="forum-button" href="http://www.pheek.net/foro">Ir a los Foros</a></div>
 	<?php echo form_close(); ?>
 </div>

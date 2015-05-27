@@ -37,12 +37,12 @@ class Bans extends MY_Controller {
 	
 	private function actions($ban){
 		$acts="";
-		$acts.=anchor("player/user/".$ban->pName,"<img src='/gtasa-mapicons/zoom.png' width='18px' height='18px'/>");
+		$acts.=anchor("player/user/".$ban->pName,"<img src='/gtasa-mapicons/zoom.png' title 'Detalles' width='18px' height='18px'/>");
 		
 		if($ban->banActive==1)
-			$acts.=anchor_popup("bans/lift/".$ban->pID,'<img src="/gtasa-mapicons/property_green.gif"/>');
+			$acts.=anchor_popup("bans/lift/".$ban->pID,'<img src="/gtasa-mapicons/property_green.gif" title="Levantar ban" />');
 		else
-			$acts.=anchor_popup("bans/ban/".$ban->pID,'<img src="/gtasa-mapicons/property_red.gif"/>');
+			$acts.=anchor_popup("bans/ban/".$ban->pID,'<img src="/gtasa-mapicons/property_red.gif" title "Banear" />');
 		
 		return $acts;
 	}
