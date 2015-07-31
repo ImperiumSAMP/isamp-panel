@@ -330,5 +330,12 @@ text-decoration: none;
 color: #fff;
 }
 
+span.important a {
+    font-size:1.5em;
+    color:#fd5555;
+    font-style:bold;
+    text-decoration:underline;
+}
+
 
 /* This button was generated using CSSButtonGenerator.com */

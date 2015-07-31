@@ -30,3 +30,8 @@ function get_acclevel(){
 	$CI =& get_instance();	
 	return $CI->isamp_auth->get_acclevel();
 }
+
+function check_level($level){
+    $CI =& get_instance();
+	return $CI->isamp_auth->check_level($level);    
+}

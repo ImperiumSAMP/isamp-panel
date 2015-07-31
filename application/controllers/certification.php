@@ -3,13 +3,15 @@ class Certification extends MY_Controller {
 
 	protected $_model="Registration_model";
 	protected $_list_title="Lista de solicitudes de cuenta";
-	protected $_order="name";
-	protected $_order_direction="asc";
-	//protected $_view="list.php";
+	protected $_order="lastedit";
+	protected $_order_direction="desc";
+	protected $_view="register/list.php";
 	private $_search_by_ip=false;
 	
 	public function _generate_where($criteria,$by){
+	    $criteria=urldecode($criteria);
 		switch($by){
+		    case "byStatusOrName": return "status = '$criteria' or name like '%$criteria%'"; break;
 			case "byName": return "name like '%$criteria%'"; break;
 			case "byIP": return "IP like '%$criteria%'"; break;
 			case "byNameOrIp": return "name like '%$criteria%' or IP like '%$criteria%'"; break;
@@ -18,20 +20,37 @@ class Certification extends MY_Controller {
 	}
 	
 	public function _set_table_heading($table){
-		$table->set_heading('Nombre', 'IP', 'Edad', 'Usuario foro', 'Nombre real','Edad real','Estado','Última modificacion' ,'Acciones');
+		$table->set_heading('Nombre', 'Edad', 'Usuario foro', 'Detalles' ,'IP','Estado','Última modificacion','Acciones');
 		return $table;
 	}
 	
 	public function _add_row_to_table($table,$reg){
-		$table->add_row($this->player_detail_link($reg->regid,$reg->name),anchor("http://who.is/whois-ip/ip-address/".$reg->ip,$reg->ip),$reg->age,anchor("http://www.pheek.net/foro/User-".$reg->forumuser,$reg->forumuser),$reg->realname,$reg->realage,$reg->status,$reg->lastedit,$this->actions($reg));
-		$table->add_row(
-		        array('data' => 'Bio: '.$reg->bio, 'colspan' => 3),
-		        array('data' => 'Historia: '.$reg->story, 'colspan' => 6));
+		$table->add_row($this->player_detail_link($reg->regid,$reg->name),$reg->age,anchor("http://www.pheek.net/foro/User-".$reg->forumuser,$reg->forumuser),$this->player_detail_link($reg->regid,$this->_detailed_info($reg)),anchor("http://who.is/whois-ip/ip-address/".$reg->ip,$reg->ip),anchor("/certification/search/byStatusOrName/".$reg->status,$reg->status),$reg->lastedit,$this->actions($reg));
+	}
+	
+	private function _detailed_info($reg){
+	    return "<span extra-data='
+	                    <ul>
+	                        <li>Nombre real: ".$reg->realname."</li>
+	                        <li>Edad real: " .$reg->realage."</li>
+	                        <li>Bio: " .$reg->bio."</li>
+	                        <li>Historia: ".$reg->story."</li>
+	                   <ul>'>Ver detalles</span>";
 	}
 
 	private function player_detail_link($id,$name){
 		$this->load->helper('url');
-		return anchor_popup("certification/detail_popup/$id",$name,array());
+		$atts = array(
+              'width'      => '1000',
+              'height'     => '800',
+              'scrollbars' => 'yes',
+              'status'     => 'no',
+              'resizable'  => 'yes',
+              'screenx'    => '0',
+              'screeny'    => '0'
+            );
+
+		return anchor_popup("certification/detail_popup/$id",$name,$atts);
 	}
 	
 	private function showbool($val){
@@ -51,6 +70,10 @@ class Certification extends MY_Controller {
 
 	public function index(){
 		$this->search();
+	}
+	
+	public function pending(){
+	    return parent::search('byStatusOrName','Esperando certificacion');
 	}
 	
 	public function search($by="byNameOrIp",$criteria="_",$page=1){
@@ -86,6 +109,36 @@ class Certification extends MY_Controller {
 	}
 	
 	public function _show_details($registration,$notifications=""){
-		$this->load->view('register/details.php',array('Notifications' => $notifications, 'Player' => $registration));
+	    $this->load->model("Registration_model",'registration');
+	    $previous=$this->registration->get_all_by_token($registration->regtoken);
+	    $this->load->helper(array('form', 'url'));
+		$this->load->view('register/details.php',array('Notifications' => $notifications, 'Player' => $registration, 'Previous' => $previous));
+	}
+	
+	public function certify($regid){
+	    require_level(ACCLEVEL_MODERATOR);
+	    
+	    $this->load->model("Registration_model","registration");
+	    $this->load->model("Account_model","account");
+	    
+	    $cert=$this->input->post();
+	    
+	    $reg=$this->registration->as_array()->get($regid);
+	    
+	    $reg['admincomments']=$cert['admincomments'];
+	    $reg['adminname'] = $this->session->userdata('Name');
+	    $reg['lastedit'] = null;
+	   
+	    if($cert['action']=='reject'){
+	        $reg['status']='Rechazado';
+	    } else if($cert['action']=='accept'){
+	        $reg['status']='Aceptado';
+	        $userid=$this->account->resetuser($reg['name'], $reg['password']);
+	        $reg['accountid']=$userid;
+	    }
+	    
+	    $this->registration->update($regid, $reg);
+	    $this->detail_popup($regid);
+
 	}
 }

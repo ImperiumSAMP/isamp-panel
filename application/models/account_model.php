@@ -78,7 +78,7 @@ class Account_model extends MY_Model {
             $this->update($user->Id,array('Password' => md5($password)));
             return $user->Id;
         } else {
-            return $this->insert(array('Name' => $name, 'Password' => md5));
+            return $this->insert(array('Name' => $name, 'Password' => md5($password)));
         }
 	}
 	
