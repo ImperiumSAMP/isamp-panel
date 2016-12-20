@@ -84,7 +84,7 @@ class Certification extends MY_Controller {
 		require_level(ACCLEVEL_MODERATOR);
 		$this->load->model("Registration_model","registration");
 		$reg=$this->registration->get($id);
-		$this->load->view("header.php",array('title'=>"Malos Aires Roleplay - Ficha del ciudadano $reg->name"));
+		$this->load->view("header.php",array('title'=>"Los Santos Roleplay - Ficha del ciudadano $reg->name"));
 		$this->_show_details($reg);
 		$this->load->view("footer.php");
 	}
@@ -93,7 +93,7 @@ class Certification extends MY_Controller {
 		require_level(ACCLEVEL_MODERATOR);
 		$this->load->model("Registration_model",'registration');
 		$account=$this->registration->get_last_by_name($name);
-		$this->load->view("header.php",array('title'=>"Malos Aires Roleplay - Ficha del ciudadano $name"));
+		$this->load->view("header.php",array('title'=>"Los Santos Roleplay - Ficha del ciudadano $name"));
 		$this->load->view("topbar.php");
 		$this->_show_details($account);
 		$this->load->view("footer.php");
@@ -102,7 +102,7 @@ class Certification extends MY_Controller {
 	public function status($token){
 	    $this->load->model("Registration_model",'registration');
 		$account=$this->registration->get_last_by_token($token);
-		$this->load->view("header.php",array('title'=>"Malos Aires Roleplay - Ficha del ciudadano $account->name"));
+		$this->load->view("header.php",array('title'=>"Los Santos Roleplay - Ficha del ciudadano $account->name"));
 		$this->load->view("topbar.php");
 		$this->_show_details($account);
 		$this->load->view("footer.php");

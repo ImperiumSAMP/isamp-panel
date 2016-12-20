@@ -90,7 +90,7 @@ class Player extends MY_Controller {
 	
 		$this->load->model('Account_model','account');
 		$account=$this->account->get_by_name($name);
-		$this->load->view("header.php",array('title'=>"Malos Aires Roleplay - Ficha del ciudadano $name"));
+		$this->load->view("header.php",array('title'=>"Los Santos Roleplay - Ficha del ciudadano $name"));
 		$this->load->view("topbar.php");
 		$this->_show_details($account);
 		$this->load->view("footer.php");
@@ -120,7 +120,7 @@ class Player extends MY_Controller {
 	        $userid=$this->account->resetuser($name, $pass);    
 	        
 	        if($userid!=FALSE){
-	           		$this->load->view("header.php",array('title'=>"Malos Aires Roleplay - Ficha del ciudadano $name"));
+	           		$this->load->view("header.php",array('title'=>"Los Santos Roleplay - Ficha del ciudadano $name"));
 		            $this->load->view("topbar.php"); 
 		            //$this->load->view('players/created.php',array('Player' => $name,'Password' => $pass));
 		            $account=$this->account->get($userid);
@@ -129,7 +129,7 @@ class Player extends MY_Controller {
 	        }
 	    } else {
 	        $this->load->helper(array('form', 'url'));
-	        $this->load->view("header.php",array('title'=>"Malos Aires Roleplay - Nueva ciudadan&iacute;a"));
+	        $this->load->view("header.php",array('title'=>"Los Santos Roleplay - Nueva ciudadan&iacute;a"));
 	        $this->load->view("topbar.php");
 	        $this->load->view("players/create.php");
             $this->load->view("footer.php");	    

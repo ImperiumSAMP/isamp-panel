@@ -30,7 +30,7 @@ class Login extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$this->session->set_flashdata('redirect_url',$this->session->flashdata('redirect_url'));
-			$this->load->view("header.php",array('title'=>'Malos Aires Roleplay - Iniciar sesi&oacute;n'));
+			$this->load->view("header.php",array('title'=>'Los Santos Roleplay - Iniciar sesi&oacute;n'));
 			$this->load->view("login_form.php");
 			$this->load->view("footer.php");
 		}
@@ -55,7 +55,7 @@ class Login extends CI_Controller {
 				} else {
     				$this->session->set_flashdata( 'message', 'Login inv&aacute;lido.' );
                     $this->session->set_flashdata('redirect_url',$this->session->flashdata('redirect_url'));
-    				$this->load->view("header.php",array('title'=>'Malos Aires Roleplay - Iniciar sesi&oacute;n'));
+    				$this->load->view("header.php",array('title'=>'Los Santos Roleplay - Iniciar sesi&oacute;n'));
     				$this->load->view("login_form.php");
     				$this->load->view("footer.php");
 				}
@@ -73,7 +73,7 @@ class Login extends CI_Controller {
 	}
 	
 	public function access_denied(){
-		$this->load->view("header.php",array('title'=>'Malos Aires Roleplay - Acceso denegado'));
+		$this->load->view("header.php",array('title'=>'Los Santos Roleplay - Acceso denegado'));
 		$this->load->view("topbar.php");
 		$this->load->view("busted.php");
 		$this->load->view("footer.php");
@@ -83,7 +83,7 @@ class Login extends CI_Controller {
 		$this->load->library('session');
 		$this->session->sess_destroy();
 		
-		$this->load->view("header.php",array('title'=>'Malos Aires Roleplay - Cerrar sesión'));
+		$this->load->view("header.php",array('title'=>'Los Santos Roleplay - Cerrar sesión'));
 		$this->load->view("topbar.php");
 		$this->load->view("logout.php");
 		$this->load->view("footer.php");

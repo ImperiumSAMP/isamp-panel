@@ -1,5 +1,5 @@
 <div class="login-form">
-	<h1>Ciudad de Malos Aires</h1>
+	<h1>Ciudad de Los Santos</h1>
 
 	<h2>Creaci&oacute;n de nuevo ciudadano</h2>
 	<?php echo form_open('player/create'); ?>

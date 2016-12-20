@@ -1,7 +1,7 @@
 <html>
 	<head>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Malos Aires RolePlay - <?=$title?></title>
+		<title>Los Santos RolePlay - <?=$title?></title>
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/table-styles.css" />
 		<link rel="stylesheet" href="/isamp.css" />

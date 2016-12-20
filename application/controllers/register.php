@@ -80,10 +80,10 @@ class Register extends CI_Controller {
 	private function _notify_mail($reg){
 	    $this->load->library('email');
 
-            $this->email->from('webmaster@malosaires.com.ar', 'Malos Aires Roleplay');
+            $this->email->from('webmaster@malosaires.com.ar', 'Los Santos Roleplay');
             $this->email->to($reg['email']);
 
-            $this->email->subject('Confirmación de registro en Malos Aires Roleplay');
+            $this->email->subject('Confirmación de registro en Los Santos Roleplay');
             $message=$this->load->view('register/success_email',array('token'=>$reg['regtoken']),TRUE);
             $this->email->message($message);
             $this->email->send();
