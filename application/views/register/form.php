@@ -1,9 +1,9 @@
 <div class="register-form">
-	<div id="title" valign="center"><h1><img src="/citylogo.png" width="60px">Ciudad de Malos Aires</h1></div>
+	<div id="title" valign="center"><h1><img src="/citylogo.png" width="60px">Ciudad de Los Santos</h1></div>
 
 	<h2>Formulario de solicitud de ciudadan&iacute;a</h2>
 	
-	<p>Bienvenido a la ciudad de Malos Aires.<br/>
+	<p>Bienvenido a la ciudad de Los Santos.<br/>
 	Completando el siguiente formulario, usted podr&aacute; aplicar para la ciudadan&iacute;a Argencholina, necesaria para poder permanecer en la ciudad.</p>
 	<p>Luego de recibir su solicitud, nuestra oficina de migraciones la procesar&aacute; y le informar&aacute; en el transcurso de 72 hs habiles en caso de ser otorgada.<br>
 	Ante cualquier duda o consulta sobre su aplicaci&oacute;n, por favor comuniquese con nostros via el <a href="http://www.pheek.net/foro">foro de atenci&oacute;n al ciudadano</a>.</p>
@@ -46,7 +46,7 @@
 			<div class="login-field">
 				<span class="field-title"><h5>Lugar de nacimiento / origen</h5></span>
 			    <?php echo form_error('birthplace'); ?>
-				<span class="field-input"><input type="text" name="birthplace" title="Ciudad de origen de tu personaje. Puede ser una ciudad real, o una ficticia compatible con el universo de Malos Aires. NO son válidas los ciudades del GTA." value="<?php echo set_value('birthplace',@$reg->birthplace)?>" size="40" /></span>
+				<span class="field-input"><input type="text" name="birthplace" title="Ciudad de origen de tu personaje. Puede ser una ciudad real, o una ficticia compatible con el universo de Los Santos. NO son válidas los ciudades del GTA." value="<?php echo set_value('birthplace',@$reg->birthplace)?>" size="40" /></span>
 			</div>
 			
 			<div class="login-field">

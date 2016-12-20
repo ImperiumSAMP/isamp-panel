@@ -1,10 +1,10 @@
 <div class="register-form">
-	<div id="title" valign="center"><h1><img src="/citylogo.png" width="60px">Ciudad de Malos Aires</h1></div>
+	<div id="title" valign="center"><h1><img src="/citylogo.png" width="60px">Ciudad de Los Santos</h1></div>
 
 	<h2>Formulario de solicitud de ciudadan&iacute;a</h2>
 	
-	<p>Bienvenido a la ciudad de Malos Aires.<br/>
-	Para solicitar tu ciudadan&iacute;a en la ciudad de Malos Aires, es necesario estar registrado y haber iniciado sesi&oacute;n en nuestros <a href="http://www.pheek.net/foro">foros de atenci&oacute;n al ciudadano</a>.</p>
+	<p>Bienvenido a la ciudad de Los Santos.<br/>
+	Para solicitar tu ciudadan&iacute;a en la ciudad de Los Santos, es necesario estar registrado y haber iniciado sesi&oacute;n en nuestros <a href="http://www.pheek.net/foro">foros de atenci&oacute;n al ciudadano</a>.</p>
 	<p>Por favor, inicia sesi&oacute;n en el foro y vuelve a esta p&aacute;gina para continuar.</p>
 	
 	<h3>Inicio de sesi&oacute;n en los foros Pheek.net</h3>

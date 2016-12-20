@@ -120,7 +120,7 @@ function initialize() {
     isPng: false,
     minZoom: 2,
     maxZoom: 4,
-    name: 'Malos Aires'
+    name: 'Los Santos'
   });
 
   gallPetersMapType.projection = new GallPetersProjection();
