@@ -1,4 +1,5 @@
 <div class="register-form">
+	<div id="title" valign="center"><h1><img src="/citylogo.png" width="60px">Ciudad de Los Santos</h1></div>
 
 	<h2>Cuestionario de conceptos Roleplay</h2>
 	
