@@ -69,7 +69,7 @@ class Register extends CI_Controller {
 	    unset($reg["password-validation"]);
 	    
 	    if($this->registration->insert($reg)!=null){
-	        //$this->_notify_mail($reg);
+	        $this->_notify_mail($reg);
 	        return $reg["regtoken"];
 	    }
 	    else {
@@ -79,18 +79,14 @@ class Register extends CI_Controller {
 	
 	private function _notify_mail($reg){
 	    $this->load->library('email');
-	    /*$config['charset'] = 'utf-8';
-        $config['wordwrap'] = TRUE;
-        $config['mailtype'] = 'html';
-        $this->email->initialize($config);*/
 
-        $this->email->from('webmaster@malosaires.com.ar', 'Malos Aires Roleplay');
-        $this->email->to($reg['email']);
+            $this->email->from('webmaster@malosaires.com.ar', 'Malos Aires Roleplay');
+            $this->email->to($reg['email']);
 
-        $this->email->subject('Confirmación de registro en Malos Aires Roleplay');
-        $message=$this->load->view('register/success',array('token'=>$reg['regtoken']),TRUE);
-        $this->email->message($message);
-        $this->email->send();
+            $this->email->subject('Confirmación de registro en Malos Aires Roleplay');
+            $message=$this->load->view('register/success_email',array('token'=>$reg['regtoken']),TRUE);
+            $this->email->message($message);
+            $this->email->send();
 	}
 
 }

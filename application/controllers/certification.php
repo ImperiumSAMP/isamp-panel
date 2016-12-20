@@ -138,7 +138,22 @@ class Certification extends MY_Controller {
 	    }
 	    
 	    $this->registration->update($regid, $reg);
+	    $this->_notify_mail($reg);
 	    $this->detail_popup($regid);
 
 	}
+
+	private function _notify_mail($reg){
+            $this->load->library('email');
+
+            $this->email->from('webmaster@malosaires.com.ar', 'Malos Aires Roleplay');
+            $this->email->to($reg['email']);
+
+            $this->email->subject('Actualización de estado de registro en Malos Aires Roleplay');
+            $message=$this->load->view('register/status_email',array('token'=>$reg['regtoken'],'status'=>$reg['status'],'name'=>$reg['name']),TRUE);
+            $this->email->message($message);
+            $this->email->send();
+        }
+
+
 }

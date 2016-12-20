@@ -97,13 +97,13 @@ class Player extends MY_Controller {
 	}
 	
 	public function _show_details($account,$notifications=""){
-		$this->load->model('Job_model','job');
+		//$this->load->model('Job_model','job');
 		$this->load->model('Faction_model','faction');
 		
-		$job=$this->job->get($account->Job);
+		//$job=$this->job->get($account->Job);
 		$faction=$this->faction->get($account->Faction);
 		
-		$this->load->view('players/details.php',array('Notifications' => $notifications, 'Player' => $account, 'Job' =>  $job, 'Faction' => $faction));
+		$this->load->view('players/details.php',array('Notifications' => $notifications, 'Player' => $account, /*'Job' =>  $job,*/ 'Faction' => $faction));
 	}
 	
 	public function create($name=""){
