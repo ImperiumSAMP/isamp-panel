@@ -88,7 +88,9 @@
 				<span class="field-input"><textarea name="story" title="Escribe brevemente la historia de tu personaje y como llega a la ciudad." maxlength="1000" rows="5" cols="37"><?php echo set_value('story',@$reg->story)?></textarea></span>
 			</div>
 		
-			<div><br><a class="login-button" href="<?=site_url("Questions")?>">Firmar y enviar</a></div> 
+			 <div><br><input type="submit" value="Firmar y enviar" class="login-button" /></div>
+
+			<!--div><br><a class="login-button" href="<?=site_url("questions")?>">Firmar y enviar</a></div--> 
 		
 		</div>
 	
