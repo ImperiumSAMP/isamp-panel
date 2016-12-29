@@ -46,7 +46,7 @@
 			<div class="login-field">
 				<span class="field-title"><h5>Lugar de nacimiento / origen</h5></span>
 			    <?php echo form_error('birthplace'); ?>
-				<span class="field-input"><input type="text" name="birthplace" title="Ciudad de origen de tu personaje. Puede ser una ciudad real, o una ficticia compatible con el universo de Los Santos. NO son válidas los ciudades del GTA." value="<?php echo set_value('birthplace',@$reg->birthplace)?>" size="40" /></span>
+				<span class="field-input"><input type="text" name="birthplace" title="Ciudad de origen de tu personaje. Puede ser una ciudad real, o una ficticia compatible con el universo de Los Santos." value="<?php echo set_value('birthplace',@$reg->birthplace)?>" size="40" /></span>
 			</div>
 			
 			<div class="login-field">
@@ -88,7 +88,9 @@
 				<span class="field-input"><textarea name="story" title="Escribe brevemente la historia de tu personaje y como llega a la ciudad." maxlength="1000" rows="5" cols="37"><?php echo set_value('story',@$reg->story)?></textarea></span>
 			</div>
 		
-			<div><br><input type="submit" value="Firmar y enviar" class="login-button" /></div>
+			 <div><br><input type="submit" value="Firmar y enviar" class="login-button" /></div>
+
+			<!--div><br><a class="login-button" href="<?=site_url("questions")?>">Firmar y enviar</a></div--> 
 		
 		</div>
 	

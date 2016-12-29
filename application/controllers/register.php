@@ -14,12 +14,12 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('password-validation', "'Repetir contraseña'", 'required');
 		$this->form_validation->set_rules('age', "'Edad (IC)'", 'required|integer');
 		$this->form_validation->set_rules('birthplace', "'Lugar de nacimiento'", 'required');
-		$this->form_validation->set_rules('bio', "'Descripción física'", 'required|min_length[10]|max_length[300]');
+		$this->form_validation->set_rules('bio', "'Descripción física'", 'required|min_length[50]|max_length[300]');
 		$this->form_validation->set_rules('realname', "'Nombre real'", 'required');
 		$this->form_validation->set_rules('realage', "'Edad real'", 'required|integer');
 		$this->form_validation->set_rules('email', "'E-Mail'", 'required|valid_email');
 		$this->form_validation->set_rules('forumuser', "'Usuario del foro'", 'required');
-		$this->form_validation->set_rules('story', "'Historia del personaje'", 'required|min_length[20]|max_length[1000]');
+		$this->form_validation->set_rules('story', "'Historia del personaje'", 'required|min_length[250]|max_length[1000]');
 		
 		$this->form_validation->set_error_delimiters('<p class="validation-errors">* ', '</p>');
 		
@@ -76,13 +76,12 @@ class Register extends CI_Controller {
 	        return null;
 	    }
 	}
-	
 	private function _notify_mail($reg){
 	    $this->load->library('email');
-
+		
             $this->email->from('webmaster@malosaires.com.ar', 'Los Santos Roleplay');
             $this->email->to($reg['email']);
-
+			
             $this->email->subject('Confirmación de registro en Los Santos Roleplay');
             $message=$this->load->view('register/success_email',array('token'=>$reg['regtoken']),TRUE);
             $this->email->message($message);
